@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Notes Prop</string>
+    <string name="add_user_image_message">Add user image</string>
+    <string name="hello_message">Hello</string>
+    <string name="let_get_started_message">Let\'s get started</string>
+    <string name="email_message">Email</string>
+    <string name="password_message">Password</string>
+    <string name="confirm_password_message">Confirm password</string>
+    <string name="create_account_message">Create Account</string>
+    <string name="already_have_account_message">Already have an account?</string>
+    <string name="login_message">Login</string>
+    <string name="welcome_back_message">Welcome Back</string>
+    <string name="don_have_account_message">Don\'t have an account</string>
+    <string name="add_message">Add</string>
+    <string name="add_new_note_message">Add New Note</string>
+    <string name="image_save_message">Image save</string>
+    <string name="title_message">Title</string>
+    <string name="content_message">Content</string>
+    <string name="required_message">Title is required</string>
+</resources>

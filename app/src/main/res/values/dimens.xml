@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_size_default">16dp</dimen>
+    <dimen name="common_size_middle">24dp</dimen>
+    <dimen name="common_size_big">48dp</dimen>
+    <dimen name="common_size_min">12dp</dimen>
+</resources>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/common_size_default"
+    tools:context=".Activities.CreateAccountActivity">
+
+    <ImageView
+        android:id="@+id/imgSignUp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginVertical="@dimen/common_size_default"
+        android:src="@drawable/person_add"
+        android:contentDescription="@string/add_user_image_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_size_default"
+        android:text="@string/hello_message"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSignUp"/>
+
+    <TextView
+        android:id="@+id/tvGetStarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_size_default"
+        android:text="@string/let_get_started_message"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHello"/>
+
+    <LinearLayout
+        android:id="@+id/form_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_size_default"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvGetStarted">
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_size_default"
+            android:padding="@dimen/common_size_min"
+            android:hint="@string/email_message"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/rounded_corner"
+            android:autofillHints="Email" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_size_default"
+            android:padding="@dimen/common_size_min"
+            android:hint="@string/password_message"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_corner"
+            android:autofillHints="Password" />
+
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_size_default"
+            android:padding="@dimen/common_size_min"
+            android:hint="@string/confirm_password_message"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_corner"
+            android:autofillHints="Confirm Password" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_size_big"
+            android:layout_marginTop="@dimen/common_size_default"
+            android:text="@string/create_account_message"
+            android:textSize="16sp"
+            app:cornerRadius="10dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/common_size_default"
+            android:layout_marginTop="@dimen/common_size_default"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_size_default"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/form_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_account_message"/>
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_message"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
