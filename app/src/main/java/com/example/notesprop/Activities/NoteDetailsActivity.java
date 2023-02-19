@@ -2,9 +2,13 @@ package com.example.notesprop.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -19,7 +23,6 @@ import com.google.firebase.firestore.DocumentReference;
 public class NoteDetailsActivity extends AppCompatActivity {
 
     private EditText etTitle, etContent;
-    private ImageButton btnSabe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +30,8 @@ public class NoteDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note_details);
 
         onInit();
+        setToolbar();
 
-        btnSabe.setOnClickListener(v -> saveNote());
     }
 
     private void saveNote() {
@@ -68,10 +71,37 @@ public class NoteDetailsActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_options, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.save:
+                saveNote();
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + item.getItemId());
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void onInit() {
         etTitle = findViewById(R.id.etNoteTitle);
         etContent = findViewById(R.id.etNoteContent);
-        btnSabe = findViewById(R.id.saveNote);
+
+    }
+
+    private void setToolbar(){
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.new_note_message);
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+
+
     }
 
 
